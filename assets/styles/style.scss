@@ -1,0 +1,634 @@
+@import "C:/My/Photoshop/all.scss";
+$red:#6C0D0F;
+$gray:#A098A5;
+$white:#E5DFEB;
+$yellow:#F4E969;
+$brown:#290E14;
+body{
+	max-width: 1920px;
+	margin: 0 auto;
+	font-family: "Roboto";
+	color:$brown;
+	&::-webkit-scrollbar {
+		width: 10px;
+		background-color: $gray;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $yellow;
+		border-radius: 10px;
+	}
+}
+.article{
+	height: 100vh;
+	width: 300px;
+	position: sticky;
+	background-color: $white;
+	top: 0;
+	&__logo{
+		width: 65px;
+		margin-top: 10px;
+		margin-left: 18px;
+	}
+	&__container{
+		width:calc(100% - 24px);
+		height: calc(100% - 95px);
+		margin: 0 auto;
+		max-height: 1000px;
+	}
+	&__title{
+		text-align: center;
+		font-weight: 900;
+		color:$brown;
+		font-size: calc(18px + (28 - 18) * (100vw / 1920));
+	}
+	&__button{
+		border-radius: 20px;
+		background-color: $red;
+		font-size: 24px;
+		font-weight: 900;
+		color: $white;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		position:relative;
+		width: 100%;
+		height: 37px;
+		cursor: pointer;
+		&:hover{
+			background-color: $yellow;
+			transition: all 0.3s ease;
+			color: $red;
+		}
+	}
+	&__input{
+		width: 100%;
+		border-radius: 20px;
+		box-sizing: content-box;
+		background-color: $white;
+		border: 2px solid $red;
+		padding-left: 10px;
+		height: 40px;
+		color: $white;
+		font-size: 18px;
+		background-color: $gray;
+		box-sizing:border-box;
+		&:focus{
+			outline: none;
+			border:3px solid $yellow;
+			transition: all 0.3s ease;
+		}
+	}
+	&__checkBox{
+		width: 32px;
+		height: 32px;
+		border-radius: 5px;
+		border: 3px solid $red;
+		cursor: pointer;
+	}
+	&__lupa{
+		width: 24px;
+		position: absolute;
+		right: 10px;
+		z-index: 2;
+		cursor: pointer;
+	}
+	&__partContainer{
+		width: 100%;
+		gap:14px;
+	}
+	&__checkBoxTitle{
+		font-size: 20px;
+	}
+	&__checkBoxContainer{
+		gap:11px;
+	}
+	&__text{
+		font-size: 20px;
+		font-weight: 900;
+	}
+	&__checkBoxContainer{
+		align-items: flex-start;
+		align-self: flex-start;
+		margin-left: 18px;
+		justify-content: stretch;
+	}
+	&__marginLeft{
+		margin-left: 20px;
+	}
+	&__okImage{
+		width: 80%;
+	}
+	&__selectContainer{
+		width: calc(100% - 24px);
+		& img{
+			width: 36px;
+			cursor: pointer;
+		}
+		& p{
+			color: $brown;
+		}
+	}
+	&__autoFox{
+		height: 130px;
+		border-radius: 20px;
+		width: 100%;
+		background-color: $gray;
+		padding: 8px;
+		box-sizing: border-box;
+		justify-content: stretch;
+		gap:11px;
+		overflow: auto;
+		&::-webkit-scrollbar {
+			width: 10px;
+			background-color: $red;
+			border-radius: 10px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: $yellow;
+			border-radius: 10px;
+		}
+	}
+	&__autoLine{
+		border-radius: 20px;
+		height: 30px;
+		width: 100%;
+		background-color: $white;
+		&>div{
+			width: calc(100% - 16px);
+		}
+	}
+	&__circle{
+		background-color: $gray;
+		border-radius: 50%;
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+		& > img{
+			height: 70%;
+		}
+		&:hover{
+			background-color: $yellow;
+			transition: all 0.3s ease;
+		}
+	}
+	&__activeDropdown{
+		transform: rotate(180deg);
+		transition: all 0.3s ease;
+	}
+	&__dropDown{
+		height: 190px;
+		width:100%;
+		background-color: $gray;
+		position: absolute;
+		border-radius: 20px;
+		top: -200px;
+	}
+	&__dropDownContainer{
+		width: calc(100% - 20px);
+		height: calc(100% - 20px);
+		gap:6px;
+		justify-content: stretch;
+		overflow: auto;
+		&::-webkit-scrollbar {
+			width: 10px;
+			background-color: $red;
+			border-radius: 10px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: $yellow;
+			border-radius: 10px;
+		}
+	}
+	&__line{
+		border-radius: 20px;
+		background-color: $white;
+		width:100%;
+		cursor: pointer;
+		padding: 1px 0;
+		& > p{
+			font-size: 24px;
+			color: $brown;
+			font-weight: bold;
+		}
+		&:hover{
+			transition: all 0.3s ease;
+			background-color: $yellow;
+			& > p{
+				color: $red;
+			}
+		}
+	}
+	&__alreadySelectedLine{
+		background-color: $red !important;
+		cursor: not-allowed;
+		& > p{
+			color:$yellow !important;
+		}
+	}
+	&__inputHelper{
+		width:100%;
+		position: absolute;
+		top: 90px;
+		height: 220px;
+		border-radius: 20px;
+		background: $gray;
+		z-index: 2;
+	}
+	&__citiesContainer{
+		height: calc(100% - 20px);
+		width: calc(100% - 20px);
+		justify-content: stretch;
+		gap:4px;
+		overflow: auto;
+	}
+}
+.width{
+	width:100%;
+}
+.map{
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	&__container{
+		background-color: $red;
+		width: 100%;
+		height: calc(100% - 25px);
+		overflow: hidden;
+	}
+	&__ukraine{
+		width: 85%;
+	}
+	&__line{
+		width:100%;
+		height: 3px;
+		background-color: $yellow;
+	}
+	&__resizer{
+		border-radius: 20px;
+		background-color: $gray;
+		width: 60px;
+		height: 50px;
+		position: relative;
+		margin: 0 auto;
+		bottom: 19px;
+		cursor: pointer;
+		& > img{
+			width: 40px;
+		}
+	}
+	&__activeResizer{
+		transition: all 0.3s ease;
+		background-color: $yellow;
+		cursor: ns-resize;
+	}
+	&__dotContainer{
+		cursor: pointer;
+		position: absolute;
+		& p{
+			margin-top: 3px;
+			color: $white;
+		}
+	}
+	&__dot{
+		width: 2vw;
+		height: 2vw;
+		max-width: 40px;
+		max-height: 40px;
+		min-width: 20px;
+		min-height: 20px;
+		border-radius: 50%;
+		background-color: rgba(244, 233, 105,0.4);
+		& > div{
+			width: 67.5%;
+			height: 67.5%;
+			border-radius: 50%;
+			background-color: $yellow;
+		}
+	}
+}
+.body{
+	width: calc(100% - 300px);
+}
+.table{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 70px;
+	margin-top: 10px;
+	&__fixedInput{
+		margin-top: 50px;
+		width: 33%;
+		margin-right: 10px;
+		align-self: flex-end;
+		margin-bottom: 38px;
+		min-width: 220px;
+	}
+	&__main{
+		width:calc(100% - 10px);
+	}
+	&__header{
+		width: 100%;
+		min-height: 60px;
+		background-color: $red;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		color: $white;
+		font-weight: 900;
+		font-size: calc(12px + (20 - 12) * (100vw / 1920));
+		padding: 13px 15px;
+		box-sizing: border-box;
+		text-align: center;
+	}
+	&__body{
+		width:100%;
+		background-color: $gray;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+	}
+	&__container{
+		display: grid;
+		grid-template-columns: 1fr;
+		max-height: 326px;
+		gap: 14px;
+		margin: 16px 0;
+		overflow: auto;
+		width: calc(100% - 26px);
+		&::-webkit-scrollbar {
+			width: 10px;
+			background-color: $red;
+			border-radius: 10px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: $yellow;
+			border-radius: 10px;
+		}
+	}
+	&__row{
+		padding: 5px 7px;
+		background-color: $white;
+		border-radius: 20px !important;
+		min-height: 28px;
+		overflow: hidden;
+		& p{
+			color: $brown;
+			font-size: calc(12px + (20 - 12) * (100vw / 1920));
+			@media(max-width:1920xp) {
+				font-size: 20px;
+			}
+			font-weight: 900;
+			text-align: center;
+		}
+	}
+	&__margin{
+		margin-left: 5px;
+	}
+	&__circle{
+		width: 30px;
+		height: 30px;
+		background-color: $gray;
+		border-radius: 50%;
+		cursor: pointer;
+		&:hover{
+			transition: all 0.3s ease;
+			background-color: $yellow;
+		}
+	}
+	&__bin{
+		width: 70%;
+	}
+	&__weatherIcon{
+		width: 30px;
+	}
+	&__clearAll{
+		width: 40px;
+		cursor: pointer;
+	}
+	&__clearAllTitle{
+		font-weight: 700;
+		font-size: 20px;
+		margin-left: 10px;
+	}
+}
+.grid{
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(85px,1fr));
+	grid-template-rows: auto;
+	gap: 10px;
+	align-items: center;
+	justify-items: center;
+}
+.font{
+	font-size: calc(12px + (20 - 12) * (100vw / 1920));
+	@media(max-width:1920xp) {
+		font-size: 20px;
+	}
+}
+.mega{
+	align-items: stretch;
+	&__burger{
+		width: 50px;
+		height: 50px;
+		background-color: $gray;
+		position: fixed;
+		right: 10px;
+		top: 10px;
+		z-index: 20;
+		border-radius: 10px;
+		justify-content: space-around;
+		display: none;
+		cursor: pointer;
+		& > div{
+			width: 80%;
+			height: 5px;
+			border-radius: 10px;
+			background-color: $red;
+		}
+		&:hover{
+			& > div{
+				transition: all 0.3s ease;
+				background-color: $yellow;
+			}
+		}
+	}
+	&__infoBox{
+		position: fixed;
+		width:100%;
+		bottom: 10px;
+		z-index: 5;
+		right: 20px;
+	}
+	&__info{
+		min-height: 30px;
+		width: 75%;
+		background-color: $gray;
+		border-radius: 20px;
+		padding: 5px 20px;
+		box-sizing: border-box;
+		justify-content: stretch;
+	}
+	&__image{
+		width: 30px;
+	}
+	&__infoText{
+		font-size: calc(16px + (24 - 16) * (100vw / 1920));
+		@media(max-width:1920px) {
+			font-size: 24px;
+		}
+		color: $red;
+		font-weight: 900;
+		margin-left: 15px;
+	}
+	&__questionMark{
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		background-color: $white;
+		z-index: 20;
+		cursor: pointer;
+		& > img{
+			height: 80%;
+		}
+		&:hover{
+			transition: all 0.3s ease;
+			background-color: $yellow;
+		}
+	}
+}
+@media(max-width:800px) {
+	.article{
+		z-index: 3;
+		position: fixed;
+	}
+	.body{
+		width: 100%;
+	}
+	.map{
+		height: 60vh;
+		&__ukraine{
+			width: 95%;
+		}
+	}
+	.mega__burger{
+			display: flex;
+	}
+}
+.swipeAnimation{
+	animation:swipe 0.5s linear;
+	@keyframes swipe{
+		0% {
+			transform: rotate(0deg);
+		}
+		33% {
+			transform: rotate(30deg);
+		}
+		66%{
+			transform: rotate(-30deg);
+		}
+		100%{
+			transform: rotate(0deg);
+		}
+	}
+}
+.helpMenu{
+	width:100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 19;
+	&__blackFon{
+		opacity: 0.5;
+		background-color: $gray;
+		width:100%;
+		height:100%;
+	}
+	&__info{
+		width: 50vw;
+		min-width: 340px;
+		min-height: 340px;
+		max-width: 700px;
+		max-height: 700px;
+		background-color: $white;
+		padding: 10px;
+		position: absolute;
+		border-radius: 20px;
+	}
+	&__greeting{
+		& > img{
+			width: 60px;
+		}
+		& >p{
+			font-size: 24px;
+			font-weight: 900;
+			color: $brown;
+		}
+	}
+	&__controlContainer{
+		gap: 10px;
+		margin-top: 10px;
+		display: flex;
+	}
+	&__ball{
+		cursor: pointer;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background-color: $red;
+		&:hover{
+			transition: all 0.3s ease;
+			background-color: $yellow;
+		}
+	}
+	&__selectedBall{
+		background-color: $brown;
+	}
+	&__arrow{
+		cursor: pointer;
+		& > img{
+			height: 50px;
+		}
+	}
+	&__container{
+		width: 80%;
+		overflow: hidden;
+	}
+	&__slider{
+		width: 90%;
+	}
+	&__sliderContainer{
+		margin-top: 20px;
+		justify-content: stretch;
+	}
+	&__slideImage{
+	& >img{
+		width:100%;
+		object-fit: contain;
+		border-radius: 20px;
+	}
+	& > p{
+		position: absolute;
+		font-weight: 600;
+		color:$gray;
+		font-size: calc(25px + (35 - 10) * (100vw / 1920));
+		@media(max-width:1920) {
+			font-size: 35px;
+		}
+	}
+	}
+	&__text{
+		margin-top: 20px;
+		font-size: calc(14px + (20 - 6) * (100vw / 1920));
+		@media(max-width:1920px) {
+			font-size: 20px;
+		}
+		& span{
+			background-color: $yellow;
+			color: $red;
+		}
+	}
+}
